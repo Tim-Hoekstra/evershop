@@ -1,8 +1,6 @@
-.logih {
-  .btn {
-  }
-}
-@layer base {
+@reference './tailwind.css';
+
+body.frontStore {
   .required-indicator {
     @apply text-red-500 ml-1;
   }
@@ -329,7 +327,6 @@
       &__input {
         input {
           &:focus {
-            @apply shadow-none !important;
             box-shadow: none !important;
             outline: none !important;
           }
@@ -344,16 +341,16 @@
       }
     }
   }
-}
 
-.react-select__input input:focus,
-.react-select__input input:focus-visible,
-.react-select__input input {
-  box-shadow: none !important;
-  outline: none !important;
-}
+  .react-select__input input:focus,
+  .react-select__input input:focus-visible,
+  .react-select__input input {
+    box-shadow: none !important;
+    outline: none !important;
+  }
 
-div[class*='react-select'] input:focus {
-  box-shadow: none !important;
-  outline: none !important;
+  div[class*='react-select'] input:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }
 }

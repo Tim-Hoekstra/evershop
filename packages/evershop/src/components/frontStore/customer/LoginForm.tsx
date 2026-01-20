@@ -56,7 +56,14 @@ export const CustomerLoginForm: React.FC<{
           method="POST"
           onSubmit={async (data) => {
             try {
-              await login(data.email, data.password, redirectUrl);
+              await login(
+                {
+                  email: data.email,
+                  password: data.password,
+                  ...data
+                },
+                redirectUrl
+              );
             } catch (error) {
               onError?.(error);
             }
@@ -72,9 +79,9 @@ export const CustomerLoginForm: React.FC<{
                   default: (
                     <InputField
                       prefixIcon={<EnvelopeIcon className="h-5 w-5" />}
-                      label="Email"
+                      label={_('Email')}
                       name="email"
-                      placeholder="Email"
+                      placeholder={_('Email')}
                       required
                       validation={{
                         required: _('Email is required')
@@ -89,9 +96,9 @@ export const CustomerLoginForm: React.FC<{
                   default: (
                     <PasswordField
                       prefixIcon={<LockClosedIcon className="h-5 w-5" />}
-                      label="Password"
+                      label={_('Password')}
                       name="password"
-                      placeholder="Password"
+                      placeholder={_('Password')}
                       required
                       validation={{
                         required: _('Password is required')

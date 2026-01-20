@@ -1,9 +1,4 @@
-@layer components {
-  .header {
-    @apply hidden #{!important};
-  }
-}
-#app {
+body.admin.adminLogin {
   .content-wrapper {
     margin-top: 0;
   }

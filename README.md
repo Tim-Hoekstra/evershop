@@ -11,16 +11,7 @@
 </h4>
 
 <p align="center">
-  <img src="https://github.com/evershopcommerce/evershop/actions/workflows/build_test.yml/badge.svg" alt="Github Action">
-  <a href="https://twitter.com/evershopjs">
-    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/evershopjs?style=social">
-  </a>
-  <a href="https://discord.gg/GSzt7dt7RM">
-    <img src="https://img.shields.io/discord/757179260417867879?label=discord" alt="Discord">
-  </a>
-  <a href="https://opensource.org/licenses/GPL-3.0">
-    <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License">
-  </a>
+  <img src="https://github.com/evershopcommerce/evershop/actions/workflows/build_test.yml/badge.svg" alt="Github Action"> <a href="https://twitter.com/evershopjs"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/evershopjs?style=social"></a> <a href="https://discord.gg/GSzt7dt7RM"><img src="https://img.shields.io/discord/757179260417867879?label=discord" alt="Discord"></a> <a href="https://opensource.org/licenses/GPL-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License"></a>
 </p>
 
 <p align="center">
@@ -38,7 +29,7 @@ You can get started with EverShop in minutes by using the Docker image. The Dock
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/evershopcommerce/evershop/main/docker-compose.yml > docker-compose.yml
-docker-compose up -d
+docker compose up -d
 ```
 
 For the full installation guide, please refer to our [Installation guide](https://evershop.io/docs/development/getting-started/installation-guide).
@@ -102,6 +93,14 @@ If you add some more information such as your thoughts and vision about the feat
 
 
 Please refer to our [Contribution Guidelines](./CONTRIBUTING.md) and [Code of Conduct](./CODE_OF_CONDUCT.md).
+
+## 🚀 The Future of EverShop
+
+EverShop is seeing rapid organic growth and strong adoption from the developer community. We are now scaling our operations and building **EverShop Cloud**.
+
+If you are a strategic investor interested in the future of Node.js commerce and our mission to set a new standard for modern eCommerce, we’d love to share our vision and roadmap with you.
+
+📩 **Get in touch:** support@evershop.io
 
 ## License
 

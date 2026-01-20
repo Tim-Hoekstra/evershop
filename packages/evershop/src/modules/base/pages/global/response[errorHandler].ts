@@ -12,7 +12,6 @@ import { AppStateContextValue, Config } from '../../../../types/appContext.js';
 import { EvershopRequest } from '../../../../types/request.js';
 import { loadWidgetInstances } from '../../../cms/services/widget/loadWidgetInstances.js';
 import { getContextValue } from '../../../graphql/services/contextHelper.js';
-import { getNotifications } from '../../services/notifications.js';
 
 export default async (request: EvershopRequest, response, next) => {
   try {
@@ -36,6 +35,7 @@ export default async (request: EvershopRequest, response, next) => {
         setPageMetaInfo(request, {
           route: {
             id: route.id,
+            isAdmin: route.isAdmin,
             path: route.path,
             url: getContextValue(request, 'currentUrl'),
             params: request.params
