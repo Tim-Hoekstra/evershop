@@ -1,6 +1,7 @@
 import { FileBrowser } from '@components/admin/FileBrowser.js';
 import { getColumnClasses } from '@components/common/form/editor/GetColumnClasses.js';
 import { getRowClasses } from '@components/common/form/editor/GetRowClasses.js';
+import { RawToolWrapper } from '@components/common/form/editor/RawToolWrapper.js';
 import { RowTemplates } from '@components/common/form/editor/RowTemplates.js';
 import { Field, FieldLabel } from '@components/common/ui/Field.js';
 import {
@@ -49,10 +50,11 @@ async function loadEditorJSQuote(): Promise<any> {
   return Quote;
 }
 
-async function loadEditorJSRaw(): Promise<any> {
-  const { default: RawTool } = await import('@editorjs/raw');
-  return RawTool;
-}
+// Using custom RawToolWrapper instead to fix backspace issues
+// async function loadEditorJSRaw(): Promise<any> {
+//   const { default: RawTool } = await import('@editorjs/raw');
+//   return RawTool;
+// }
 
 const SortableRow: React.FC<{
   row: Row;
@@ -198,7 +200,7 @@ export const Editor: React.FC<EditorProps> = ({ name, value = [], label }) => {
       const Header = await loadEditorJSHeader();
       const List = await loadEditorJSList();
       const Quote = await loadEditorJSQuote();
-      const RawTool = await loadEditorJSRaw();
+      // Using RawToolWrapper instead of loading from @editorjs/raw
       setValue(name, rows);
       rows.forEach((row) => {
         row.columns.forEach((column) => {
@@ -211,7 +213,10 @@ export const Editor: React.FC<EditorProps> = ({ name, value = [], label }) => {
               tools: {
                 header: Header,
                 list: List,
-                raw: RawTool,
+                raw: {
+                  class: RawToolWrapper,
+                  inlineToolbar: false
+                },
                 quote: Quote,
                 image: {
                   class: ImageTool,
