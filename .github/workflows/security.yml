@@ -1,11 +1,17 @@
 name: Security Review
 
 permissions:
-  pull-requests: write  # Needed for leaving PR comments
+  pull-requests: write
   contents: read
 
 on:
   pull_request:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number to scan'
+        required: true
+        type: string
 
 jobs:
   security:
